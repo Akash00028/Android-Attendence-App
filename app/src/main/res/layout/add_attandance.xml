@@ -149,11 +149,11 @@
         android:background="@drawable/roundedbutton"
         android:text="View Attendance" />
 
-    <Button
-        android:id="@+id/export"
-        android:layout_width="40dp"
-        android:layout_height="50dp"
-        android:layout_below="@id/buttonsubmit"
-        android:text="export" />
+<!--    <Button-->
+<!--        android:id="@+id/export"-->
+<!--        android:layout_width="40dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_below="@id/buttonsubmit"-->
+<!--        android:text="export" />-->
 
 </RelativeLayout>

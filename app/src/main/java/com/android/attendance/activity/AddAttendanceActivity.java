@@ -68,7 +68,7 @@ public class AddAttendanceActivity extends Activity {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
 
-				arg0.getChildAt(arg2).setBackgroundColor(Color.TRANSPARENT);
+			//	arg0.getChildAt(arg2).setBackgroundColor(Color.TRANSPARENT);
 				//arg0.setBackgroundColor(234567);
 				arg1.setBackgroundColor(334455);
 				final StudentBean studentBean = studentBeanList.get(arg2);
