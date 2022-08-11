@@ -115,5 +115,10 @@ public class MenuActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		Intent i = new Intent(MenuActivity.this, LoginActivity.class);
+		startActivity(i);
+	}
 }

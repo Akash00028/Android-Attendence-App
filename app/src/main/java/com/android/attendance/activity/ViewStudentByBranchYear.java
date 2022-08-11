@@ -45,7 +45,7 @@ public class ViewStudentByBranchYear extends Activity {
 
 		for(StudentBean studentBean : studentBeanList)
 		{
-			String users = studentBean.getStudent_firstname()+" "+studentBean.getStudent_lastname();
+			String users = studentBean.getStudent_firstname()+" "+studentBean.getStudent_lastname()+"__"+studentBean.getStudent_address()+"__"+studentBean.getStudent_department();
 					
 			studentList.add(users);
 			Log.d("users: ", users); 
@@ -123,5 +123,9 @@ public class ViewStudentByBranchYear extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		finish();
+	}
 }

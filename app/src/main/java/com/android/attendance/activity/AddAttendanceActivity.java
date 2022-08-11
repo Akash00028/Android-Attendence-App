@@ -134,4 +134,10 @@ public class AddAttendanceActivity extends Activity {
 		return true;
 	}
 
+
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		finish();
+	}
 }

@@ -247,4 +247,9 @@ public class AddAttandanceSessionActivity<AddAttandanceActivity> extends Activit
 		}
 	};
 
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		finish();
+	}
 }

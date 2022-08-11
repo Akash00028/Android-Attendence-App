@@ -38,7 +38,7 @@ public class ViewFacultyActivity extends Activity {
 
 		for(FacultyBean facultyBean : facultyBeanList)
 		{
-			String users = " FirstName: " + facultyBean.getFaculty_firstname()+"\tLastname:"+facultyBean.getFaculty_lastname();
+			String users = " FirstName: " + facultyBean.getFaculty_firstname()+"\t\tLastname:"+facultyBean.getFaculty_lastname();
 				
 			facultyList.add(users);
 			Log.d("users: ", users); 
@@ -116,5 +116,9 @@ public class ViewFacultyActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		finish();
+	}
 }

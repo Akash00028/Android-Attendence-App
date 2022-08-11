@@ -26,7 +26,7 @@ public class AddStudentActivity extends Activity {
 	Button registerButton;
 	EditText textFirstName;
 	EditText textLastName;
-
+	Button c;
 	EditText textcontact;
 	EditText textaddress;
 	Spinner spinnerbranch,spinneryear;
@@ -46,6 +46,35 @@ public class AddStudentActivity extends Activity {
 		textcontact=(EditText)findViewById(R.id.editTextPhone);
 		textaddress=(EditText)findViewById(R.id.editTextaddr);
 		registerButton=(Button)findViewById(R.id.RegisterButton);
+		c=(Button)findViewById(R.id.Cancel_Button);
+
+
+//		kjkjk
+//public static void(){
+//		String first_name = textFirstName.getText().toString();
+//		String last_name = textLastName.getText().toString();
+//		String phone_no = textcontact.getText().toString();
+//		String address = textaddress.getText().toString();
+////		main
+//		StudentBean studentBean = new StudentBean();
+//
+//		studentBean.setStudent_firstname(first_name);
+//		studentBean.setStudent_lastname(last_name);
+//		studentBean.setStudent_mobilenumber(phone_no);
+//		studentBean.setStudent_address(address);
+//		studentBean.setStudent_department(branch);
+//		studentBean.setStudent_class(year);
+//
+//		DBAdapter dbAdapter= new DBAdapter(AddStudentActivity.this);
+//		dbAdapter.addStudents(studentBean);}
+//		lklkl
+
+
+
+
+
+
+
 
 		spinnerbranch.setOnItemSelectedListener(new OnItemSelectedListener() {
 			@Override
@@ -94,6 +123,36 @@ public class AddStudentActivity extends Activity {
 		spinneryear.setAdapter(adapter_year);
 
 
+		c.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				String first_name = textFirstName.getText().toString();
+				String last_name = textLastName.getText().toString();
+				String phone_no = textcontact.getText().toString();
+				String address = textaddress.getText().toString();
+
+				{
+
+					StudentBean studentBean = new StudentBean();
+
+					studentBean.setStudent_firstname(first_name);
+					studentBean.setStudent_lastname(last_name);
+					studentBean.setStudent_mobilenumber(phone_no);
+					studentBean.setStudent_address(address);
+					studentBean.setStudent_department(branch);
+					studentBean.setStudent_class(year);
+
+					DBAdapter dbAdapter= new DBAdapter(AddStudentActivity.this);
+//					dbAdapter.addStudent(studentBean);
+					dbAdapter.addStudents(studentBean);
+
+					Intent intent =new Intent(AddStudentActivity.this,MenuActivity.class);
+					startActivity(intent);
+					Toast.makeText(getApplicationContext(), "student added successfully", Toast.LENGTH_SHORT).show();
+
+				}
+			}
+		});
 
 		registerButton.setOnClickListener(new OnClickListener() {
 
@@ -133,6 +192,7 @@ public class AddStudentActivity extends Activity {
 					
 					DBAdapter dbAdapter= new DBAdapter(AddStudentActivity.this);
 					dbAdapter.addStudent(studentBean);
+					dbAdapter.addStudents(studentBean);
 					
 					Intent intent =new Intent(AddStudentActivity.this,MenuActivity.class);
 					startActivity(intent);
@@ -149,5 +209,12 @@ public class AddStudentActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		finish();
+	}
+
 
 }

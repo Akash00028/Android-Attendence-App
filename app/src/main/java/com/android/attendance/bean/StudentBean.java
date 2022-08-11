@@ -9,6 +9,8 @@ public class StudentBean {
 	private String student_address;
 	private String student_department;
 	private String student_class;
+	private String lastname;
+
 	public int getStudent_id() {
 		return student_id;
 	}
@@ -52,6 +54,21 @@ public class StudentBean {
 		this.student_class = student_class;
 	}
 
-	
+
+
+
+
+
+	public String name_l_1() {
+		return "mku";
+	}
+	public void setStudent__lastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+
+
+
+
 
 }

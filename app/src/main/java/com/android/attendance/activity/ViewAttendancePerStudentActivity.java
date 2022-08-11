@@ -45,7 +45,7 @@ public class ViewAttendancePerStudentActivity extends Activity {
 			
 				DBAdapter dbAdapter = new DBAdapter(ViewAttendancePerStudentActivity.this);
 				StudentBean studentBean =dbAdapter.getStudentById(attendanceBean.getAttendance_student_id());
-				users = attendanceBean.getAttendance_student_id()+".     "+studentBean.getStudent_firstname()+"     "+studentBean.getStudent_lastname()+" \t"+attendanceBean.getAttendance_session_id()+" \t "+studentBean.getStudent_address();
+				users = studentBean.getStudent_firstname()+" "+studentBean.getStudent_lastname()+" Reg.No:"+studentBean.getStudent_address()+" attend"+attendanceBean.getAttendance_session_id()+" class";
 				attendanceList.add(users);
 		}
 
@@ -120,5 +120,9 @@ public class ViewAttendancePerStudentActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		finish();
+	}
 }

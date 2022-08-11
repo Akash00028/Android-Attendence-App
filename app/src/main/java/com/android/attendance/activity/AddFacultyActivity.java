@@ -26,6 +26,7 @@ public class AddFacultyActivity extends Activity {
 	EditText textaddress;
 	EditText textusername;
 	EditText textpassword;
+	Button c;
 
 
 	@Override
@@ -41,6 +42,35 @@ public class AddFacultyActivity extends Activity {
 		textusername=(EditText)findViewById(R.id.editTextUserName);
 		textpassword=(EditText)findViewById(R.id.editTextPassword);
 		registerButton=(Button)findViewById(R.id.RegisterButton);
+		c=(Button)findViewById(R.id.Cancel_Button);
+
+		c.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				String first_name = textFirstName.getText().toString();
+				String last_name = textLastName.getText().toString();
+				String phone_no = textcontact.getText().toString();
+				String address = textaddress.getText().toString();
+				String userName = textusername.getText().toString();
+				String passWord = textpassword.getText().toString();
+
+				FacultyBean facultyBean = new FacultyBean();
+				facultyBean.setFaculty_firstname(first_name);
+				facultyBean.setFaculty_lastname(last_name);
+				facultyBean.setFaculty_mobilenumber(phone_no);
+				facultyBean.setFaculty_address(address);
+				facultyBean.setFaculty_username(userName);
+				facultyBean.setFaculty_password(passWord);
+
+				DBAdapter dbAdapter = new DBAdapter(AddFacultyActivity.this);
+				dbAdapter.addFac(facultyBean);
+
+				Intent intent =new Intent(AddFacultyActivity.this,MenuActivity.class);
+				startActivity(intent);
+				Toast.makeText(getApplicationContext(), "Faculty added successfully", Toast.LENGTH_SHORT).show();
+
+			}
+		});
 
 		registerButton.setOnClickListener(new OnClickListener() {
 
@@ -105,6 +135,12 @@ public class AddFacultyActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
+	}
+
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		finish();
 	}
 
 }

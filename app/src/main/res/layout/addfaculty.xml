@@ -118,7 +118,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="18dp"
             android:background="@drawable/roundedbutton"
-            android:text="cancle"
+            android:text="fetch"
             android:textColor="#ffffff" />
 
         <Button
