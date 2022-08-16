@@ -130,10 +130,10 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
         android:background="@drawable/roundedbutton"
-        android:text="View Total Attendance" />
+        android:text="View Quick All Attendance" />
 
     <Button
         android:id="@+id/viewAttendancebutton"
@@ -144,10 +144,10 @@
         android:layout_alignParentLeft="true"
         android:layout_centerInParent="true"
         android:layout_marginLeft="17dp"
-        android:layout_marginRight="20dp"
         android:layout_marginTop="50dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/roundedbutton"
-        android:text="View Attendance" />
+        android:text="View Recent Attendance" />
 
 <!--    <Button-->
 <!--        android:id="@+id/export"-->
